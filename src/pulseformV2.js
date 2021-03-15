@@ -90,7 +90,7 @@ const PulseForm = () =>{
         <Formik
             initialValues={{
                 date: new Date().toLocaleDateString(),
-                time: new Date().toLocaleTimeString(),
+                time: new Date().toLocaleTimeString().substr(0,5),
                 upperPressure: '',
                 lowerPressure: '',
                 pulse: '',
@@ -98,13 +98,15 @@ const PulseForm = () =>{
                 comment: '',
             }}
             validate={validate}
-            onSubmit={(values, {setSubmitting}) => {
+            onSubmit={(values, actions) => {
                 console.log(Object.values(values));
 
-                setSubmitting(false);
+
                 const dataBase = JSON.parse(localStorage.getItem('baseOfValues'));
                 dataBase.push(Object.values(values));
                 localStorage.setItem('baseOfValues', JSON.stringify(dataBase));
+                actions.setSubmitting(false);
+                actions.resetForm();
             }}
         >
             <Form>
