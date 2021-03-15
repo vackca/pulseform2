@@ -89,8 +89,8 @@ const PulseForm = () =>{
     return(
         <Formik
             initialValues={{
-                date: '',
-                time: '',
+                date: new Date().toLocaleDateString(),
+                time: new Date().toLocaleTimeString(),
                 upperPressure: '',
                 lowerPressure: '',
                 pulse: '',
