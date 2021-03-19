@@ -2,29 +2,23 @@ import PulseForm from "./pulseformV2";
 import React, {Component} from  'react';
 import { BrowserRouter, Route} from "react-router-dom"
 import Table from "./MyStatistics";
-import NavigationButton from "./NavigationButton";
+import NavigationButton from "./NavigationButtonV2";
 
 
 class App extends Component{
 
-  state = {}
-
+    state={};
 
     RowRemover = (index) =>{
+        const answer = window.confirm('Виктор Александрович, а вы точно хотите удалить эти данные?');
 
-        const oldBase = JSON.parse(localStorage.getItem('baseOfValues'));
-        const newBase = oldBase.filter((item, i) => i !== index);
+        if(answer) {
+            const oldBase = JSON.parse(localStorage.getItem('baseOfValues'));
+            const newBase = oldBase.filter((item, i) => i !== index);
 
-        localStorage.setItem('baseOfValues', JSON.stringify(newBase));
-        this.setState(this.state);
-    }
-
-
-    renderMyStatistics = () =>{
-      const RowRemover = this.RowRemover
-      return(
-          <Table  RowRemover={RowRemover} />
-      )
+            localStorage.setItem('baseOfValues', JSON.stringify(newBase));
+            this.setState(this.state);
+        }
     }
 
     defineLocalStorage =()=>{
@@ -42,12 +36,17 @@ class App extends Component{
   render() {
     this.defineLocalStorage();
 
+
       return(
            <div id={'container'}>
                <NavigationButton />
                <switch>
-                   <Route exact path='/'> <PulseForm defineLocalStorage={this.defineLocalStorage} /> </Route>
-                 <Route exact path='/statistics' component={this.renderMyStatistics}/>
+                   <Route exact path='/'>
+                       <PulseForm defineLocalStorage={this.defineLocalStorage} />
+                   </Route>
+                   <Route exact path='/statistics'>
+                       <Table RowRemover={this.RowRemover}/>
+                   </Route>
                </switch>
            </div>
       )

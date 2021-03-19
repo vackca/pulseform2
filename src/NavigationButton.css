@@ -7,6 +7,13 @@
 
 }
 
+.link.soactive{
+    color: black;
+    border: 5px solid grey;
+    color: #bababa;
+    background-color: var(--gray-700);
+}
+
 .link {
     text-align: center;
     position: relative;

@@ -12,6 +12,7 @@ const MyStatisticsHead = () =>{
                 <th>Пульс</th>
                 <th>Рука</th>
                 <th>Комментарий</th>
+                <th/>
             </tr>
             </thead>
         )
@@ -26,7 +27,7 @@ const MyStatisticsHead = () =>{
             
             const tableData = dataBase.map((elem, index) => {
 
-                let array = elem;
+                let array = Object.values(elem);
 
                 const arrayRows = array.map((myelem, index) => {
 
