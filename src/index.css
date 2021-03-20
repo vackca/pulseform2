@@ -382,11 +382,7 @@ button[type="reset"]:hover {
     margin: 1px;
   }
 
-  table{
-  }
-
   #root{
-    display: flex;
     width: 100%;
   }
 
