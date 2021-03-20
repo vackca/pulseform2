@@ -368,6 +368,7 @@ button[type="reset"]:hover {
   left: 0;
   top: 0;
   display: flex;
+  align-content: center;
 }
 
 
@@ -386,7 +387,7 @@ button[type="reset"]:hover {
 
   #root{
     display: flex;
-    width: 500px;
+    width: 100%;
   }
 
   td{
@@ -394,11 +395,11 @@ button[type="reset"]:hover {
   }
 
   form{
-    width: 500px;
+    width: 100%;
   }
 
   switch{
-    width: 500px;
+    width: 100%;
   }
 
   #navigationBar {
