@@ -89,7 +89,7 @@ const PulseForm = () =>{
     return(
         <Formik
             initialValues={{
-                date: new Date().toLocaleDateString(),
+                date: new Date().toISOString().substr(0,10),
                 time: new Date().toLocaleTimeString().substr(0,5),
                 upperPressure: '',
                 lowerPressure: '',
@@ -109,8 +109,8 @@ const PulseForm = () =>{
             }}
         >
             <Form>
-                <MyTextInput label={'Дата'} name={'date'}  type={'text'} placeholder={'18.03.2021'}/>
-                <MyTextInput label={'Время'} name={'time'}  type={'text'} placeholder={'16:23'}/>
+                <MyTextInput label={'Дата'} name={'date'}  type={'date'} defaultValue={'18.03.2021'}/>
+                <MyTextInput label={'Время'} name={'time'}  type={'time'} defaultValue={'16:23'}/>
                 <MyTextInput label={'Верхняя граница давления'} name={'upperPressure'}  type={'number'} placeholder={'120'}/>
                 <MyTextInput label={'Нижняя граница давления'} name={'lowerPressure'}  type={'number'} placeholder={'80'}/>
                 <MyTextInput label={'Пульс'} name={'pulse'}  type={'number'} placeholder={'73'}/>

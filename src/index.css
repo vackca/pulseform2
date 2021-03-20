@@ -18,7 +18,7 @@ html {
 :root {
   --gray-900: #1a202c;
   --gray-800: #2d3748;
-  --gray-700: #343a48;
+  --gray-700: #4a5568;
   --gray-600: #718096;
   --gray-500: #a0aec0;
   --gray-400: #cbd5e0;
@@ -78,6 +78,7 @@ form{
   height: 100%;
   flex-flow: column wrap;
   justify-content: center;
+  align-content: center;
 }
 
 label {
@@ -87,7 +88,9 @@ label {
 
 input[type="email"],
 input[type="text"],
-input[type="number"] {
+input[type="number"],
+input[type="date"],
+input[type="time"]{
   padding: 0.65rem 0.5rem;
   font-size: 1rem;
   border: 2px solid var(--gray-200);
@@ -102,6 +105,8 @@ input[type="number"] {
   input[type="email"]::placeholder,
   input[type="text"]::placeholder,
   input[type="number"]::placeholder,
+  input[type="date"]::placeholder,
+  input[type="time"]::placeholder,
   select,
   textarea {
     color: var(--gray-500);
@@ -110,9 +115,12 @@ input[type="number"] {
 input[type="email"],
 input[type="text"],
 input[type="number"],
+input[type="date"],
+input[type="time"],
 textarea,
 select {
   width: 400px;
+  font: inherit;
 }
 
 select {
@@ -279,16 +287,21 @@ input[type="button"]:focus-visible {
 /* Tables
 ––––––––––––––––––––––––––––––––– */
 table {
+  font-size: 100px;
   width: 100%;
   border-spacing: 0;
   margin-bottom: 1.563rem;
   font-variant-numeric: tabular-nums;
 }
 
+switch{
+  width: 100%;
+}
+
 th,
 td {
-  width:10em;
-  padding: 0.5rem 0.5rem 0.5rem 0;
+  font-size: 20px;
+  padding: 0.25rem 0.25rem 0.25rem 0;
   margin: 0;
   text-align: center;
 }
@@ -305,9 +318,12 @@ td:first-child{
 
 td {
   border-left: 2px solid;
-  height: 6em;
   border-left-color: var(--gray-300);
   border-bottom: 2px solid var(--gray-300);
+
+  max-width: 100px;
+  max-height: 100px;
+  float: top;
 }
 
 .error {
@@ -340,18 +356,14 @@ button[type="reset"]:hover {
 ::placeholder{
   opacity: 0.3;
 }
-#root{
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-}
 
 #container{
   width: 1500px;
   height: 100%;
-  flex-flow: column wrap;
-  align-items: center;
+  flex-flow: column nowrap;
+  position: absolute;
+  left: 0;
+  top: 0;
   display: flex;
 }
 
@@ -361,24 +373,26 @@ button[type="reset"]:hover {
 
 /* For phones
 ––––––––––––––––––––––––––––––––– */
-@media screen and (max-device-width: 470px ){
+@media screen and (max-device-width: 650px ){
   *{
     margin: 1px;
   }
 
   table{
-    width: 100%;
   }
 
   #root{
     display: flex;
     width: 100%;
   }
+  td{
+    font-size: 28px;
+  }
 
 
   #container{
     position: absolute;
-    width: 100%;
+    width: 1500px;
     top: 3%;
     left: 3%;
     box-sizing: unset;
