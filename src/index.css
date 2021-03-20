@@ -406,9 +406,9 @@ button[type="reset"]:hover {
   }
   #container{
     position: absolute;
-    width: 500px;
-    top: 3%;
-    left: 3%;
+    width: 100%;
+    top: 0;
+    left: 0;
     box-sizing: unset;
   }
 }
