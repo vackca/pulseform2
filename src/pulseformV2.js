@@ -49,25 +49,25 @@ const validate = values => {
 
     if (!values.date || values.date.trim() === '') {
         errors.date = 'Введите значение';
-    } else if (values.date.length > 20) {
+    } else if (values.date.toString().length > 20) {
         errors.date = 'Должно быть меньше 20 символов';
     }
 
     if (!values.time || values.time.trim() === '') {
         errors.time = 'Введите значение';
-    } else if (values.time.length > 10) {
+    } else if (values.time.toString().length > 10) {
         errors.time = 'Должно быть меньше 10 символов';
     }
 
     if (!values.upperPressure || values.upperPressure === '') {
         errors.upperPressure = 'Введите значение';
-    } else if (values.upperPressure.length > 3) {
+    } else if (values.upperPressure.toString().length > 3) {
         errors.upperPressure = 'Должно быть меньше 3 символов';
     }
 
     if (!values.lowerPressure || values.lowerPressure === '') {
         errors.lowerPressure = 'Введите значение';
-    } else if (values.lowerPressure.length > 3) {
+    } else if (values.lowerPressure.toString().length > 3) {
         errors.lowerPressure = 'Должно быть меньше 3 символов';
     }
 
