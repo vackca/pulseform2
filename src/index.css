@@ -386,16 +386,27 @@ button[type="reset"]:hover {
 
   #root{
     display: flex;
+    width: 500px;
+  }
+
+  td{
+    font-size: 26px;
+  }
+
+  form{
+    width: 500px;
+  }
+
+  switch{
+    width: 500px;
+  }
+
+  #navigationBar {
     width: 100%;
   }
-  td{
-    font-size: 28px;
-  }
-
-
   #container{
     position: absolute;
-    width: 100%;
+    width: 500px;
     top: 3%;
     left: 3%;
     box-sizing: unset;
