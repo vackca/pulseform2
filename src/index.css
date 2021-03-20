@@ -376,7 +376,7 @@ button[type="reset"]:hover {
 
 /* For phones
 ––––––––––––––––––––––––––––––––– */
-@media screen and (max-device-width: 650px ){
+@media screen and (max-device-width: 600px ){
   *{
     margin: 1px;
   }
