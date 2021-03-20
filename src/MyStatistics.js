@@ -42,7 +42,7 @@ const MyStatisticsHead = () =>{
                     <tr key ={index}>
                         {arrayRows}
                         <td>
-                            <button onClick={() =>{RowRemover(index)}}>Удалить</button>
+                            <button className={'deleteButton'} onClick={() =>{RowRemover(index)}}>X</button>
                         </td>
                     </tr>
                 )
