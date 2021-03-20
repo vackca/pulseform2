@@ -108,7 +108,6 @@ const PulseForm = () =>{
                 localStorage.setItem('baseOfValues', JSON.stringify(dataBase));
                 actions.setSubmitting(false);
                 actions.resetForm();
-                console.log(JSON.parse(localStorage.getItem('baseOfValues')));
             }}
         >
             <Form>

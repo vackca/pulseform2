@@ -21,7 +21,7 @@ const MyStatisticsHead = () =>{
 const dataChanger =(date)=>{
     const letterArray = date.split('')
         date = (letterArray[8] + letterArray[9] +':' +letterArray[5]+letterArray[6]+
-        ':' +letterArray[0]+letterArray[1]+letterArray[2]+letterArray[3])
+        '-' +letterArray[0]+letterArray[1]+letterArray[2]+letterArray[3])
     return date;
 
 }
