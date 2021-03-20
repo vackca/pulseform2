@@ -18,6 +18,13 @@ const MyStatisticsHead = () =>{
         )
 }
 
+const dataChanger =(date)=>{
+    const letterArray = date.split('')
+        date = (letterArray[8] + letterArray[9] +letterArray[7] +letterArray[5]+letterArray[6]+
+        letterArray[4] +letterArray[0]+letterArray[1]+letterArray[2]+letterArray[3])
+    return date;
+
+}
 
  const MyStatistics = (props) => {
 
@@ -30,6 +37,10 @@ const MyStatisticsHead = () =>{
                 let array = Object.values(elem);
 
                 const arrayRows = array.map((myelem, index) => {
+                    if(Number(myelem.toString().substr(0,4))>2020){
+
+                            myelem = dataChanger(myelem);
+                    };
 
                     return(
                         <td key={index}>
@@ -63,4 +74,4 @@ const Table =(props) =>{
 }
 
 
-export default Table
+export default Table;

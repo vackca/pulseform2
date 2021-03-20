@@ -47,25 +47,25 @@ const MySelectInput = ({ label, ...props }) => {
 const validate = values => {
     const  errors = {};
 
-    if (!values.date || values.date.trim() === '') {
+    if (!values.date || values.date.toString().trim() === '') {
         errors.date = 'Введите значение';
     } else if (values.date.toString().length > 20) {
         errors.date = 'Должно быть меньше 20 символов';
     }
 
-    if (!values.time || values.time.trim() === '') {
+    if (!values.time || values.time.toString().trim() === '') {
         errors.time = 'Введите значение';
     } else if (values.time.toString().length > 10) {
         errors.time = 'Должно быть меньше 10 символов';
     }
 
-    if (!values.upperPressure || values.upperPressure === '') {
+    if (!values.upperPressure || values.upperPressure.toString().trim() === '') {
         errors.upperPressure = 'Введите значение';
     } else if (values.upperPressure.toString().length > 3) {
         errors.upperPressure = 'Должно быть меньше 3 символов';
     }
 
-    if (!values.lowerPressure || values.lowerPressure === '') {
+    if (!values.lowerPressure || values.lowerPressure.toString().trim() === '') {
         errors.lowerPressure = 'Введите значение';
     } else if (values.lowerPressure.toString().length > 3) {
         errors.lowerPressure = 'Должно быть меньше 3 символов';
@@ -74,7 +74,7 @@ const validate = values => {
         errors.lowerPressure = 'Нижняя граница давления не может быть больше или равна верхней';
     }
 
-    if (!values.pulse || values.pulse === '') {
+    if (!values.pulse || values.pulse.toString().trim() === '') {
         errors.pulse = 'Введите значение';
     } else if (values.pulse.toString().length > 3) {
         errors.pulse = 'Должно быть меньше 3 символов';
@@ -112,8 +112,8 @@ const PulseForm = () =>{
             }}
         >
             <Form>
-                <MyTextInput label={'Дата'} name={'date'}  type={'date'} defaultValue={'18.03.2021'}/>
-                <MyTextInput label={'Время'} name={'time'}  type={'time'} defaultValue={'16:23'}/>
+                <MyTextInput label={'Дата'} name={'date'}  type={'date'} />
+                <MyTextInput label={'Время'} name={'time'}  type={'time'} />
                 <MyTextInput label={'Верхняя граница давления'} name={'upperPressure'}  type={'number'} placeholder={'120'}/>
                 <MyTextInput label={'Нижняя граница давления'} name={'lowerPressure'}  type={'number'} placeholder={'80'}/>
                 <MyTextInput label={'Пульс'} name={'pulse'}  type={'number'} placeholder={'73'}/>

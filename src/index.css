@@ -403,6 +403,7 @@ switch{
   .deleteButton{
     margin: auto;
   }
+
   table{
     position: absolute;
     left: -35px;
@@ -410,6 +411,13 @@ switch{
     width: 100%;
     max-width: 600px;
   }
+
+  td:first-child{
+    direction: rtl;
+    unicode-bidi: embed;
+    text-align: revert;
+  }
+
   #root{
     width: 100%;
   }
