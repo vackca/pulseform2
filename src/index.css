@@ -296,6 +296,8 @@ table {
 
 switch{
   width: 100%;
+  justify-content: center;
+  align-content: center;
 }
 
 th,
@@ -330,6 +332,7 @@ td {
   font-size: 16px;
   color: var(--red-600);
   margin-top: 0.25rem;
+  max-width: 400px;
 }
 
 button:disabled {

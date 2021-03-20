@@ -70,6 +70,9 @@ const validate = values => {
     } else if (values.lowerPressure.toString().length > 3) {
         errors.lowerPressure = 'Должно быть меньше 3 символов';
     }
+    else if (values.lowerPressure >= values.upperPressure){
+        errors.lowerPressure = 'Нижняя граница давления не может быть больше или равна верхней';
+    }
 
     if (!values.pulse || values.pulse === '') {
         errors.pulse = 'Введите значение';
